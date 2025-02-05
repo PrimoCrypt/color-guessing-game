@@ -1,0 +1,153 @@
+#root {
+  max-width:  40rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 20px;
+  background-color: #000;
+  color: rgb(187, 187, 187);
+  border-radius: 10px;
+  box-shadow:0px 0px 20px 1px;
+}
+
+h1 {
+  color: rgb(187, 187, 187);
+  margin-bottom: 5px;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  color: rgb(187, 187, 187);
+  margin-bottom: 10px;
+}
+
+.color-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 20px 0 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.color-box:hover {
+  transform: scale(1.05);
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(187, 187, 187);
+}
+
+.game-status {
+  min-height: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-status.hidden {
+  display: none;
+}
+.game-status.correct {
+  color: #4CAF50;
+  opacity: 1;
+  animation: fadeInOut 1.5s ease;
+}
+
+.game-status.wrong {
+  color: #f44336;
+  opacity: 1;
+  animation: shake 0.5s ease;
+}
+
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 0px 0 20px;
+}
+
+.color-button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.new-game-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-game-button:hover {
+  background-color: #45a049;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@media (max-width: 600px) {
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .color-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .color-button {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .color-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .color-button {
+    width: 60px;
+    height: 60px;
+  }
+}
