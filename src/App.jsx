@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ConfettiExplosion from 'react-confetti-explosion';
 import './App.css'
 
 const COLORS = [
@@ -56,11 +57,13 @@ function App() {
         data-testid="colorBox" 
         className="color-box"
         style={{ backgroundColor: targetColor }}
-      ></div>
+        ></div>
+        <>{isCorrect && <ConfettiExplosion />}</>
 
       <p data-testid="score" className="score">
         Score: {score}
       </p>
+      
 
       <div 
         data-testid="gameStatus" 
