@@ -21,6 +21,7 @@
 h1 {
   color: rgb(187, 187, 187);
   margin-bottom: 5px;
+  font-weight: 800 ;
 }
 
 .instructions {
@@ -121,9 +122,13 @@ h1 {
 }
 
 @media (max-width: 600px) {
+  h1{
+    font-size: 2rem !important;
+  }
   .color-options {
     grid-template-columns: repeat(2, 1fr);
   }
+  
 
   .color-box {
     width: 150px;
@@ -137,8 +142,16 @@ h1 {
 }
 
 @media (max-width: 400px) {
+  h1{
+    font-size: 1.8rem !important;
+  }
   .color-options {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .instructions {
+    font-size: 0.9rem;
+    color: rgb(187, 187, 187);
+    margin-bottom: 10px;
   }
 
   .color-box {
